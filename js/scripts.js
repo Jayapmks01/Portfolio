@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const text = "Helping brands grow through impactful visual & social media design.";
+const text = "Focused on branding, social media, and user-centered interface design";
 let i = 0;
 
 function typingEffect() {
