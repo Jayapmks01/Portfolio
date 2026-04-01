@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const text = "Graphic Designer & Social Media Specialist helping brands grow through impactful visuals, strategic content, and digital storytelling.";
+const text = "Helping brands grow through impactful visual & social media design.";
 let i = 0;
 
 function typingEffect() {
