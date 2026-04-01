@@ -12070,3 +12070,6 @@ body.dark-mode .text-muted {
     color: #bbbbbb !important;
 }
 
+ul {
+    padding-left: 1.2rem;
+}
