@@ -12276,3 +12276,7 @@ body.contact-page section {
         padding: 2.5rem 0;
     }
 }
+
+body, .card, .navbar, section, footer {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
