@@ -17,10 +17,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body class="d-flex flex-column h-100">
-    
 
-
+    <body class="d-flex flex-column h-100 project-page">
     <div class="my-0 fade-in">
         <main class="flex-shrink-0">
             <!-- Navigation-->
@@ -70,7 +68,7 @@
                                                 Tools: Adobe Photoshop, Adobe Illustrator
                                             </p>
                                             <hr>
-                                            <div class="card-footer bg-transparent border-0 d-flex justify-content-center justify-content-md-start"><a href="https://drive.google.com/drive/folders/1cu0Vsi03_CITZbq67DphaUKSyWnGhHz9?usp=drive_link" 
+                                            <div class="card-footer bg-transparent border-0 d-flex justify-content-center justify-content-md-start mt-3"><a href="https://drive.google.com/drive/folders/1cu0Vsi03_CITZbq67DphaUKSyWnGhHz9?usp=drive_link" 
                                             class="btn btn-primary btn-sm px-4">
                                             View case study →
                                             </a>
@@ -106,7 +104,7 @@
                                                 Tools: Adobe Photoshop, Adobe Illustrator
                                             </p>
                                             <hr>
-                                            <div class="card-footer bg-transparent border-0 d-flex justify-content-center justify-content-md-start"><a href="https://drive.google.com/drive/folders/1oDTwHiQjOZ_yVUu_1Tn0BmbZUepmXMUD?usp=drive_link" 
+                                            <div class="card-footer bg-transparent border-0 d-flex justify-content-center justify-content-md-start mt-3"><a href="https://drive.google.com/drive/folders/1oDTwHiQjOZ_yVUu_1Tn0BmbZUepmXMUD?usp=drive_link" 
                                             class="btn btn-primary btn-sm px-4">
                                             View case study →
                                             </a>
@@ -141,7 +139,7 @@
                                                 Tools: Adobe Photoshop, Adobe Illustrator
                                             </p>
                                             <hr>
-                                            <div class="card-footer bg-transparent border-0 d-flex justify-content-center justify-content-md-start"><a href="https://drive.google.com/drive/folders/1nddr4Lmp3zworlqtlXRlz8IqAGhvABbl?usp=drive_link" 
+                                            <div class="card-footer bg-transparent border-0 d-flex justify-content-center justify-content-md-start mt-3"><a href="https://drive.google.com/drive/folders/1nddr4Lmp3zworlqtlXRlz8IqAGhvABbl?usp=drive_link" 
                                             class="btn btn-primary btn-sm px-4">
                                             View Case Study →
                                             </a>
@@ -180,7 +178,7 @@
                         <span class="mx-1">&middot;</span>
                         <a class="small" href="#!">Terms</a>
                         <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                        <a class="small" href="https://wa.me/6287795499687">Contact</a>
                     </div>
                 </div>
             </div>
@@ -212,6 +210,31 @@
                 top: 0,
                 behavior: "smooth"
             });
+        });
+    });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    if (!toggleBtn) return;
+
+    // Load theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+    }
+
+    // Toggle
+    toggleBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
         });
     });
     </script>
