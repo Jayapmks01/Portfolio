@@ -71,34 +71,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("darkModeToggle");
+const toggleBtn = document.getElementById("darkModeToggle");
 
-    // load dari localStorage
-    if (localStorage.getItem("darkMode") === "enabled") {
-        document.body.classList.add("dark-mode");
-    }
+// Load dari localStorage
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️";
+}
 
-    if (toggle) {
-        toggle.addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
+// Toggle saat diklik
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-            // simpan state
-            if (document.body.classList.contains("dark-mode")) {
-                localStorage.setItem("darkMode", "enabled");
-            } else {
-                localStorage.setItem("darkMode", "disabled");
-            }
-        });
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        toggleBtn.textContent = "☀️";
+    } else {
+        localStorage.setItem("theme", "light");
+        toggleBtn.textContent = "🌙";
     }
 });
 
-const currentPage = window.location.pathname.split("/").pop();
-
-document.querySelectorAll(".nav-link").forEach(link => {
-    const linkPage = link.getAttribute("href");
-
-    if (linkPage === currentPage) {
-        link.classList.add("active");
-    }
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
 });
