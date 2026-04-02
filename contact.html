@@ -18,7 +18,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body class="d-flex flex-column">
+    
+    <body class="d-flex flex-column contact-page">
     <div class="my-0 fade-in">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
@@ -31,7 +32,6 @@
                             <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
                             <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                             <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                            <li class="nav-item">
                             <li class="nav-item">
                             <button id="darkModeToggle" class="btn btn-sm btn-outline-dark">
                             🌙
@@ -57,14 +57,14 @@
                         <form class="form-container needs-validation" id="contactForm" novalidate>
                             <!-- Name -->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name="from_name" type="text" placeholder="Nama" required>
+                                <input class="form-control" id="name" name="from_name" type="text" placeholder="" required>
                                 <label for="name">Full Name</label>
                                 <div class="invalid-feedback">Nama wajib diisi</div>
                             </div>
                             <!-- Email -->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" name="from_email" type="email"
-                                    placeholder="Email"
+                                    placeholder=""
                                     pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
                                     required>
                                 <label for="email">Email Address</label>
@@ -73,7 +73,7 @@
                             <!-- Contact -->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="contact" name="contact" type="tel"
-                                    placeholder="Contact Us"
+                                    placeholder=""
                                     inputmode="numeric"
                                     required>
                                 <label for="contact">Contact Us</label>
@@ -81,14 +81,14 @@
                             </div>
                             <!-- Subject -->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="subject" name="subject" type="text" placeholder="Subject" required>
+                                <input class="form-control" id="subject" name="subject" type="text" placeholder="" required>
                                 <label for="subject">Subject</label>
                                 <div class="invalid-feedback">Subject wajib diisi</div>
                             </div>
                             <!-- Message -->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" name="message"
-                                    placeholder="Pesan" style="height: 10rem" required></textarea>
+                                    placeholder="" style="height: 10rem" required></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback">Pesan tidak boleh kosong</div>
                             </div>
@@ -134,7 +134,7 @@
                         <span class="mx-1">&middot;</span>
                         <a class="small" href="#!">Terms</a>
                         <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                        <a class="small" href="https://wa.me/6287795499687">Contact</a>
                     </div>
                 </div>
             </div>
@@ -146,4 +146,31 @@
         <script src="js/scripts.js"></script>
     </div>
     </body>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    if (!toggleBtn) return;
+
+    // Load theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+    }
+
+    // Toggle
+    toggleBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
+        });
+    });
+    </script>
 </html>
