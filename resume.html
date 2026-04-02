@@ -19,9 +19,8 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
+
     <body class="d-flex flex-column h-100">
-
-
     <div class="my-0 fade-in">
         <main class="flex-shrink-0">
             <!-- Navigation-->
@@ -106,7 +105,7 @@
                                 
                             <hr>
 
-                            <div class="row align-items-center mt-4">
+                            <div class="row align-items-center ">
 
                                 <div class="col-md-4 mb-4 mb-md-0">
                                     <div class="bg-light p-4 rounded-4 h-100 text-center text-md-start card-hover">
@@ -131,7 +130,7 @@
                         <!-- Education Section-->
                         <section>
                             <!-- Education Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-3">
+                            <div class="card shadow border-0 rounded-4 ">
                                 <div class="card-body p-5">
                                 <div class="d-flex flex-column flex-md-row 
                                         align-items-center align-items-md-center 
@@ -176,7 +175,7 @@
                             </div>
                         </section>
                         <!-- Divider-->
-                        <div class="pb-5"></div>
+                        
                         <!-- Skills Section-->
                         <section>
                         <!-- ================= Technical Expertise ================= -->
@@ -200,19 +199,19 @@
 
                                 <div class="row row-cols-1 row-cols-md-3 g-4">
                                     <div class="col">
-                                        <div class="bg-light rounded-4 p-3 text-center h-100 card-hover">Social Media & Content Design</div>
+                                        <div class="bg-light rounded-4 p-3 text-center h-100 d-flex align-items-center justify-content-center card-hover">Social Media & Content Design</div>
                                     </div>
                                     <div class="col">
-                                        <div class="bg-light rounded-4 p-3 text-center h-100 card-hover">Branding & Visual Identity</div>
+                                        <div class="bg-light rounded-4 p-3 text-center h-100 d-flex align-items-center justify-content-center card-hover">Branding & Visual Identity</div>
                                     </div>
                                     <div class="col">
-                                        <div class="bg-light rounded-4 p-3 text-center h-100 card-hover">Digital Marketing</div>
+                                        <div class="bg-light rounded-4 p-3 text-center h-100 d-flex align-items-center justify-content-center card-hover">Digital Marketing</div>
                                     </div>
                                     <div class="col">
-                                        <div class="bg-light rounded-4 p-3 text-center h-100 card-hover">Merchandise & Event Design</div>
+                                        <div class="bg-light rounded-4 p-3 text-center h-100 d-flex align-items-center justify-content-center card-hover">Merchandise & Event Design</div>
                                     </div>
                                     <div class="col">
-                                        <div class="bg-light rounded-4 p-3 text-center h-100 card-hover">UI/UX Design</div>
+                                        <div class="bg-light rounded-4 p-3 text-center h-100 d-flex align-items-center justify-content-center card-hover">UI/UX Design</div>
                                     </div>
                                 </div>
 
@@ -312,7 +311,7 @@
                         <span class="mx-1">&middot;</span>
                         <a class="small" href="#!">Terms</a>
                         <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                        <a class="small" href="https://wa.me/6287795499687">Contact</a>
                     </div>
                 </div>
             </div>
@@ -352,6 +351,31 @@
                 top: 0,
                 behavior: "smooth"
             });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("darkModeToggle");
+
+    if (!toggleBtn) return;
+
+    // Load theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+    }
+
+    // Toggle
+    toggleBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
         });
     });
     </script>
